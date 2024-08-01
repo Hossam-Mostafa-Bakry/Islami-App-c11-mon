@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app_c11_mon/core/theme/application_theme_data.dart';
 import 'package:islami_app_c11_mon/layout/layout_view.dart';
+import 'package:islami_app_c11_mon/moduls/hadith/hadith_details_view.dart';
+import 'package:islami_app_c11_mon/moduls/quran/quran_details_view.dart';
 import 'package:islami_app_c11_mon/moduls/splash/splash_view.dart';
 
 // 1- read data from assets
@@ -26,10 +29,15 @@ class MyApp extends StatelessWidget {
       title: 'Islami App',
       theme: ApplicationThemeManager.lightTheme,
       debugShowCheckedModeBanner: false,
+      locale: Locale("en"),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       initialRoute: SplashView.routeName,
       routes: {
         SplashView.routeName: (context) => const SplashView(),
         LayOutView.routeName: (context) => const LayOutView(),
+        QuranDetailsView.routeName: (context) => const QuranDetailsView(),
+        HadithDetailsView.routeName: (context) => const HadithDetailsView()
       },
     );
   }
